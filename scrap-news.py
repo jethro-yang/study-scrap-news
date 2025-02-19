@@ -1,60 +1,76 @@
 import requests
 from bs4 import BeautifulSoup
 from datetime import datetime, timedelta
+import argparse  # CLI 인자 처리
 
-def fetch_news():
+def fetch_news(hours=1):
+    """
+    최신 뉴스 중 사용자가 지정한 시간(hours) 내의 뉴스만 크롤링하여 저장하는 함수
+    :param hours: 몇 시간 내의 뉴스만 가져올지 설정 (기본값: 1시간)
+    """
     url = "https://www.google.com/search?q=반도체+뉴스&tbm=nws"
-    headers = {"User-Agent": "Mozilla/5.0"}
+    headers = {
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36"
+    }
+
+    session = requests.Session()
+    response = session.get(url, headers=headers)
     
-    response = requests.get(url, headers=headers)
+    if response.status_code != 200:
+        print("❌ 요청 실패:", response.status_code)
+        return
+
     soup = BeautifulSoup(response.text, "html.parser")
-    print(response.text)
 
-    articles = []
+    articles = soup.select(".SoAPf")  
+    print(f"✅ {len(articles)}개의 뉴스 블록 발견!")
+
     now = datetime.now()
+    filtered_articles = []
     
-    # 뉴스 리스트 크롤링
-    for item in soup.select(".am3QBf"):  # 개별 뉴스 블록 선택
-        title_tag = item.select_one(".rQMQod.Xb5VRe")  # 기사 제목
-        press_tag = item.select_one(".rQMQod.aJyiOc")  # 언론사
-        time_tag = item.select_one(".r0bn4c.rQMQod")   # 업로드 시간
-        link_tag = item.select_one("a")  # 기사 링크
+    for article in articles:
+        # 언론사 정보 가져오기
+        press_tag = article.select_one("div.NUnG9d span")
+        press_name = press_tag.text.strip() if press_tag else "알 수 없음"
 
-        if title_tag and press_tag and time_tag and link_tag:
-            title = title_tag.text.strip()
-            press = press_tag.text.strip()
-            time_text = time_tag.text.strip()
-            link = "https://www.google.com" + link_tag["href"]
+        # 뉴스 제목 가져오기
+        title_tag = article.select_one("div.n0jPhd")
+        title = title_tag.text.strip() if title_tag else "제목 없음"
 
-            # 상대적 시간을 실제 datetime으로 변환
-            article_time = parse_relative_time(time_text)
-            
-            # 30분 이내 뉴스만 저장
-            if article_time and now - article_time <= timedelta(minutes=30):
-                articles.append((title, press, time_text, link))
+        # 업로드 시간 가져오기
+        time_tag = article.select_one("div.OSrXXb span")  # 업로드 시간 태그
+        time_text = time_tag.text.strip() if time_tag else ""
 
-    # 파일로 저장
-    with open("semiconductor_news.txt", "a", encoding="utf-8") as f:
-        f.write(f"\n=== {now.strftime('%Y-%m-%d %H:%M:%S')} ===\n")
-        for title, press, time_text, link in articles:
-            f.write(f"[{time_text}] {press} - {title}\n{link}\n")
+        # 상대적 시간을 실제 datetime으로 변환
+        article_time = parse_relative_time(time_text)
 
-    print(f"✅ {len(articles)}개 뉴스 저장 완료!")
+        # 사용자가 지정한 시간 범위 내의 뉴스만 저장
+        if article_time and now - article_time <= timedelta(hours=hours):
+            # 언론사를 대괄호, 시간을 소괄호로 감싸서 저장
+            formatted_content = f"[{press_name}] {title} ({time_text})"
+            filtered_articles.append(formatted_content)
+
+    if filtered_articles:
+        with open("news_texts_filtered.txt", "a", encoding="utf-8") as file:
+            file.write(f"\n=== 실행 시간: {now.strftime('%Y-%m-%d %H:%M:%S')} / 최근 {hours}시간 뉴스 ===\n")
+            file.writelines([f"{article}\n" for article in filtered_articles])
+
+        print(f"✅ 최근 {hours}시간 내 {len(filtered_articles)}개 뉴스가 'news_texts_filtered.txt' 파일에 저장되었습니다!")
 
 def parse_relative_time(time_text):
     """'2시간 전' 같은 상대 시간을 실제 datetime으로 변환"""
     now = datetime.now()
-
     if "분 전" in time_text:
         minutes = int(time_text.replace("분 전", "").strip())
         return now - timedelta(minutes=minutes)
     elif "시간 전" in time_text:
         hours = int(time_text.replace("시간 전", "").strip())
         return now - timedelta(hours=hours)
-    elif "일 전" in time_text:
-        days = int(time_text.replace("일 전", "").strip())
-        return now - timedelta(days=days)
-    
     return None
 
-fetch_news()
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description="반도체 뉴스 크롤링 스크립트")
+    parser.add_argument("hours", nargs="?", type=int, default=1, help="최근 몇 시간 내의 뉴스를 가져올지 설정 (기본값: 1시간)")
+    args = parser.parse_args()
+
+    fetch_news(hours=args.hours)
