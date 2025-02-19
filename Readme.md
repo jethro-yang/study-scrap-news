@@ -3,8 +3,6 @@
 ```
 python .\scrap-news.py 2
 ```
-  
-
 - 파라미터 없이 기본 1시간 뉴스
 ```
 python .\scrap-news.py
