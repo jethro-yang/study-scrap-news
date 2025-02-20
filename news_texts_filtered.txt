@@ -1,22 +1,25 @@
-
-=== 실행 시간: 2025-02-20 09:57:03 / 최근 6시간 / 검색어: 반도체 ===
-[한겨레] 트럼프, 한국에 영향 큰 자동차·반도체 관세 “한달 내 발표” (33분 전)
-    Link->https://www.hani.co.kr/arti/international/america/1183321.html
+=== 실행 시간: 2025-02-20 10:03:38 / 최근 6시간 / 검색어: 반도체 ===
+[스트레이트뉴스] 글로벌 반도체 시장, 5년 뒤 1조달러 돌파 예상…HBM 비중 확대될 것 (18분 전)
+    Link->https://www.straightnews.co.kr/news/articleView.html?idxno=264620
+[뉴시스] 트럼프 "車·반도체 관세, 내달 발표할 수도…부가세도 관세"(종합) (23분 전)
+    Link->https://www.newsis.com/view/NISX20250220_0003072046
+[KBS 뉴스] ‘반도체 기술 유출’ 전직 삼성전자 부장, 1심서 징역 7년 (24분 전)
+    Link->https://news.kbs.co.kr/news/view.do?ncd=8181071
+[연합뉴스] [속보] 트럼프 "車·반도체 관세, 한 달내 또는 그보다 일찍 발표" (1시간 전)
+    Link->https://www.yna.co.kr/view/AKR20250220027200071
 [조선일보] [속보] 트럼프 “車·반도체 관세, 한달 후 또는 그보다 일찍 발표" (1시간 전)
     Link->https://www.chosun.com/international/us/2025/02/20/VQALRQL5VNDJNNHY6O2XMOYMTI/
-[KBS 뉴스] “52시간 화이팅~” 권성동 구호에 국민의힘·반도체 업계 ‘버벅’ 순간 [지금뉴스] (4시간 전)
-    Link->https://news.kbs.co.kr/news/pc/view/view.do?ncd=8180857
-[글로벌이코노믹] 일본 파워반도체 기업들, 실적 부진 심화...중국발 위기 직면 (2시간 전)
-    Link->https://www.g-enews.com/article/Global-Biz/2025/02/202502200647529074fbbec65dfb_1
-[뉴스1] 인텔 6% 이상 급락에도 반도체지수 1.18% 상승(종합) (2시간 전)
-    Link->https://www.news1.kr/world/usa-canada/5695569
-[KBS 뉴스] 반도체 위기, ‘부지런함’ 없어서인가 (4시간 전)
-    Link->https://news.kbs.co.kr/news/view.do?ncd=8180869
-[KBS 뉴스] 중국에 반도체 기술 유출 혐의 삼성 전 부장 징역 7년 (4시간 전)
-    Link->https://news.kbs.co.kr/news/view.do?ncd=8180870
-[KBS 뉴스] ‘반도체 기술 유출’ 전직 삼성전자 부장, 1심서 징역 7년 (17분 전)
-    Link->https://news.kbs.co.kr/news/view.do?ncd=8181071
 [한국경제] ‘반도체 제조 종합 솔루션 기업’으로 거듭난 한화세미텍 (2시간 전)
     Link->https://www.hankyung.com/article/202502207180P
+[뉴스1] 인텔 6% 이상 급락에도 반도체지수 1.18% 상승(종합) (2시간 전)
+    Link->https://www.news1.kr/world/usa-canada/5695569
+[글로벌이코노믹] 일본 파워반도체 기업들, 실적 부진 심화...중국발 위기 직면 (2시간 전)
+    Link->https://www.g-enews.com/article/Global-Biz/2025/02/202502200647529074fbbec65dfb_1
+[KBS 뉴스] 중국에 반도체 기술 유출 혐의 삼성 전 부장 징역 7년 (4시간 전)
+    Link->https://news.kbs.co.kr/news/view.do?ncd=8180870
+[KBS 뉴스] 반도체 위기, ‘부지런함’ 없어서인가 (4시간 전)
+    Link->https://news.kbs.co.kr/news/view.do?ncd=8180869
+[KBS 뉴스] “52시간 화이팅~” 권성동 구호에 국민의힘·반도체 업계 ‘버벅’ 순간 [지금뉴스] (4시간 전)
+    Link->https://news.kbs.co.kr/news/pc/view/view.do?ncd=8180857
 [이투데이] 트럼프發 반도체 패권 전쟁 심화…살얼음판 걷는 韓 [반도체 ‘린치핀’ 韓의 위기] (5시간 전)
     Link->https://www.etoday.co.kr/news/view/2446405

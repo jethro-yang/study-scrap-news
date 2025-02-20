@@ -54,26 +54,34 @@ def fetch_news(hours=1, search_terms=["반도체"]):
         # 사용자가 지정한 시간 범위 내의 뉴스만 저장
         if article_time and now - article_time <= timedelta(hours=hours):
             # 언론사를 대괄호, 시간을 소괄호로 감싸서 저장
-            formatted_content = f"[{press_name}] {title} ({time_text})\n    {link}"
+            formatted_content = (article_time, f"[{press_name}] {title} ({time_text})\n    {link}")
             filtered_articles.append(formatted_content)
+
+    # 시간순 내림차순 정렬 (최신 기사 상단)
+    filtered_articles.sort(key=lambda x: x[0], reverse=True)
 
     if filtered_articles:
         with open("news_texts_filtered.txt", "a", encoding="utf-8") as file:
             file.write(f"\n=== 실행 시간: {now.strftime('%Y-%m-%d %H:%M:%S')} / 최근 {hours}시간 / 검색어: {' '.join(search_terms)} ===\n")
-            file.writelines([f"{article}\n" for article in filtered_articles])
+            file.writelines([f"{article[1]}\n" for article in filtered_articles])
 
         print(f"✅ 최근 {hours}시간 내 '{' '.join(search_terms)}' 관련 {len(filtered_articles)}개 뉴스가 'news_texts_filtered.txt' 파일에 저장되었습니다!")
 
 def parse_relative_time(time_text):
-    """'2시간 전' 같은 상대 시간을 실제 datetime으로 변환"""
+    """'2시간 전', '1일 전' 같은 상대 시간을 실제 datetime으로 변환"""
     now = datetime.now()
+    
     if "분 전" in time_text:
         minutes = int(time_text.replace("분 전", "").strip())
         return now - timedelta(minutes=minutes)
     elif "시간 전" in time_text:
         hours = int(time_text.replace("시간 전", "").strip())
         return now - timedelta(hours=hours)
-    return None
+    elif "일 전" in time_text:
+        days = int(time_text.replace("일 전", "").strip())
+        return now - timedelta(days=days)
+    
+    return None  # 날짜 형식이 맞지 않는 경우 처리
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="맞춤형 뉴스 크롤링 스크립트")
