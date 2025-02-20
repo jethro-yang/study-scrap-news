@@ -1,57 +1,9 @@
 
-=== 실행 시간: 2025-02-20 10:23:09 / 최근 36시간 / 검색어: 반도체 ===
-[KBS 뉴스] ‘반도체 기술 유출’ 전직 삼성전자 부장, 1심서 징역 7년 (43분 전)
+=== 실행 시간: 2025-02-20 10:36:58 / 최근 3시간 / 검색어: 반도체 ===
+[KBS 뉴스] ‘반도체 기술 유출’ 전직 삼성전자 부장, 1심서 징역 7년 (57분 전)
     Link->https://news.kbs.co.kr/news/view.do?ncd=8181071
-[NATE] 트럼프 "車·반도체·의약품·목재 등의 관세, 한 달내 발표"(종합) (1시간 전)
-    Link->https://news.nate.com/view/20250220n05938
-[한국경제] ‘반도체 제조 종합 솔루션 기업’으로 거듭난 한화세미텍 (2시간 전)
-    Link->https://www.hankyung.com/article/202502207180P
-[조선일보] [속보] 트럼프 “車·반도체 관세, 한달 후 또는 그보다 일찍 발표" (2시간 전)
-    Link->https://www.chosun.com/international/us/2025/02/20/VQALRQL5VNDJNNHY6O2XMOYMTI/
-[뉴스1] 인텔 6% 이상 급락에도 반도체지수 1.18% 상승(종합) (3시간 전)
-    Link->https://www.news1.kr/world/usa-canada/5695569
-[글로벌이코노믹] 일본 파워반도체 기업들, 실적 부진 심화...중국발 위기 직면 (3시간 전)
-    Link->https://www.g-enews.com/article/Global-Biz/2025/02/202502200647529074fbbec65dfb_1
-[KBS 뉴스] 중국에 반도체 기술 유출 혐의 삼성 전 부장 징역 7년 (4시간 전)
-    Link->https://news.kbs.co.kr/news/view.do?ncd=8180870
-[KBS 뉴스] “52시간 화이팅~” 권성동 구호에 국민의힘·반도체 업계 ‘버벅’ 순간 [지금뉴스] (4시간 전)
-    Link->https://news.kbs.co.kr/news/pc/view/view.do?ncd=8180857
-[뉴시스] 여야정 국정협의회 첫 4자 회담…반도체법·추경·연금개혁 합의 '적신호' (5시간 전)
-    Link->https://www.newsis.com/view/NISX20250219_0003071762
-[뉴스핌] 오늘 여야정 국정협의회…반도체법·연금개혁 '공방전' (5시간 전)
-    Link->https://www.newspim.com/news/view/20250219001008
-[이투데이] 트럼프發 반도체 패권 전쟁 심화…살얼음판 걷는 韓 [반도체 ‘린치핀’ 韓의 위기] (5시간 전)
-    Link->https://www.etoday.co.kr/news/view/2446405
-[동아일보] ‘반도체 기술 中유출’에 징역 7년… 역대 최고 형량 (7시간 전)
-    Link->https://www.donga.com/news/Society/article/all/20250220/131066465/2
-[동아일보] 트럼프 “자동차 관세 25%, 반도체-의약품은 25%이상” (7시간 전)
-    Link->https://www.donga.com/news/Inter/article/all/20250220/131066865/2
-[국제뉴스] 반도체 투자 세액공제율 5%p 인상…7개 세법개정안 기재위 통과 (9시간 전)
-    Link->https://www.gukjenews.com/news/articleView.html?idxno=3206380
-[YTN] 여야정, 국정협의회 4자 회담...반도체법·추경 논의 (10시간 전)
-    Link->https://www.ytn.co.kr/_ln/0101_202502200003303621
-[조선일보] 세계 반도체 기업 500곳 한자리에… ‘세미콘코리아’ 개막 (10시간 전)
-    Link->https://www.chosun.com/economy/economy_general/2025/02/20/ZJOV4PGDBZE5FAIPDT26BMOJTY/
-[연합뉴스TV] 추경·반도체법 힘겨루기…국정협의회서 타결될까 (13시간 전)
-    Link->https://m.yonhapnewstv.co.kr/news/MYH20250219210408274
-[KBS 뉴스] 반도체 위기, ‘부지런함’ 없어서인가 (13시간 전)
-    Link->https://news.kbs.co.kr/news/view.do?ncd=8180603
-[Chosunbiz] ‘中에 반도체 핵심기술 유출’ 前 삼성전자 부장, 1심서 징역 7년·법정 구속 - 조선비즈 (16시간 전)
-    Link->https://biz.chosun.com/topics/law_firm/2025/02/19/7DRN4ENBZFAHHPBXJY7WWKSDPA/
-[NATE] 첨단 반도체 집결 '세미콘 코리아' 개막…"포스트 AI 지탱에 반도체 필수" (16시간 전)
-    Link->https://news.nate.com/view/20250219n32267
-[전자신문] [세미콘 코리아] AI 반도체 핵심 '첨단 패키징·레이저' 기술에 인산인해 (19시간 전)
-    Link->https://www.etnews.com/20250219000335
-[한국경제] 주 52시간 묶어놓고…野 "근로시간으로 반도체 지원하는 건 후진적" (1일 전)
-    Link->https://www.hankyung.com/article/2025021838151
-[조선일보] 반도체법 무산시켜놓고… “李 거짓말” “與가 반대” 네탓 (1일 전)
-    Link->https://www.chosun.com/politics/assembly/2025/02/19/6GRO6U5ETREJNOE7273XSUWFIU/
-[경향신문] 반도체법 무산에 여 “거짓말” 야 “몽니” 공방 (1일 전)
-    Link->https://www.khan.co.kr/article/202502182044025
-
-=== 실행 시간: 2025-02-20 10:32:50 / 최근 3시간 / 검색어: 반도체 ===
-[KBS 뉴스] ‘반도체 기술 유출’ 전직 삼성전자 부장, 1심서 징역 7년 (53분 전)
-    Link->https://news.kbs.co.kr/news/view.do?ncd=8181071
+[서울경제] 주52시간제로 반도체 R&D 경쟁력 약화… 삼성 파운드리 점유율 8%대로 하락 [AI 프리즘*기업 CEO 뉴스] (1시간 전)
+    Link->https://www.sedaily.com/NewsView/2GP1JSCRBJ
 [한국경제] ‘반도체 제조 종합 솔루션 기업’으로 거듭난 한화세미텍 (2시간 전)
     Link->https://www.hankyung.com/article/202502207180P
 [연합뉴스] [속보] 트럼프 "車·반도체 관세, 한 달내 또는 그보다 일찍 발표" (2시간 전)
