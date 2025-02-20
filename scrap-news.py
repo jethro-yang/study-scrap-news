@@ -3,11 +3,11 @@ from bs4 import BeautifulSoup
 from datetime import datetime, timedelta
 import argparse  # CLI 인자 처리
 
-def fetch_news(hours=1, search_terms="반도체"):
+def fetch_news(hours=1, search_terms=["반도체"]):
     """
     최신 뉴스 중 사용자가 지정한 시간(hours)과 검색어(search_terms)로 크롤링하여 저장하는 함수
     :param hours: 몇 시간 내의 뉴스만 가져올지 설정 (기본값: 1시간)
-    :param search_terms: 검색할 키워드 (기본값: "반도체")
+    :param search_terms: 검색할 키워드 (기본값: ["반도체"])
     """
     search_query = "+".join(search_terms)  # 검색어들을 '+'로 연결하여 URL에 적용
     url = f"https://www.google.com/search?q={search_query}&tbm=nws"
@@ -25,7 +25,7 @@ def fetch_news(hours=1, search_terms="반도체"):
 
     soup = BeautifulSoup(response.text, "html.parser")
 
-    articles = soup.select(".SoAPf")  
+    articles = soup.select(".WlydOe")  
     print(f"✅ '{' '.join(search_terms)}' 검색어로 {len(articles)}개의 뉴스 블록 발견!")
 
     now = datetime.now()
@@ -40,6 +40,10 @@ def fetch_news(hours=1, search_terms="반도체"):
         title_tag = article.select_one("div.n0jPhd")
         title = title_tag.text.strip() if title_tag else "제목 없음"
 
+        # 뉴스 링크 가져오기
+        link_tag = article.get("href")
+        link = f"Link->{link_tag}" if link_tag else "#"
+
         # 업로드 시간 가져오기
         time_tag = article.select_one("div.OSrXXb span")  # 업로드 시간 태그
         time_text = time_tag.text.strip() if time_tag else ""
@@ -50,7 +54,7 @@ def fetch_news(hours=1, search_terms="반도체"):
         # 사용자가 지정한 시간 범위 내의 뉴스만 저장
         if article_time and now - article_time <= timedelta(hours=hours):
             # 언론사를 대괄호, 시간을 소괄호로 감싸서 저장
-            formatted_content = f"[{press_name}] {title} ({time_text})"
+            formatted_content = f"[{press_name}] {title} ({time_text})\n    {link}"
             filtered_articles.append(formatted_content)
 
     if filtered_articles:
