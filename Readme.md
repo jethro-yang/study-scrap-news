@@ -3,6 +3,7 @@
   - 시간: 1시간
   - 정렬: 내림차순
   - 검색어: 뉴스
+  - 페이지: 10페이지
 ```
 python .\scrap-news.py
 ```
@@ -14,6 +15,7 @@ python .\scrap-news.py
   - -k: 키워드
     - 예시1: 반도체
     - 예시2: 반도체 삼성
+  - -p: 페이지: 정수값
 ```
 python .\scrap-news.py -t 2 -s 1 -k 삼성 반도체
 ```
