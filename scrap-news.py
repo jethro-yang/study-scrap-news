@@ -3,11 +3,11 @@ from bs4 import BeautifulSoup
 from datetime import datetime, timedelta
 import argparse  # CLI 인자 처리
 
-def fetch_news(hours=1, search_terms=["반도체"], sort_order=0):
+def fetch_news(hours=1, search_terms=["뉴스"], sort_order=0):
     """
     최신 뉴스 중 사용자가 지정한 시간(hours)과 검색어(search_terms)로 크롤링하여 저장하는 함수
     :param hours: 몇 시간 내의 뉴스만 가져올지 설정 (기본값: 1시간)
-    :param search_terms: 검색할 키워드 (기본값: ["반도체"])
+    :param search_terms: 검색할 키워드 (기본값: ["뉴스"])
     :param sort_order: 정렬 방식 (0: 내림차순, 1: 오름차순)
     """
     search_query = "+".join(search_terms)  # 검색어들을 '+'로 연결하여 URL에 적용
@@ -88,7 +88,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="맞춤형 뉴스 크롤링 스크립트")
     parser.add_argument("-t", type=int, default=1, help="최근 몇 시간 내의 뉴스를 가져올지 설정 (정수, 기본값: 1)")
     parser.add_argument("-s", type=int, choices=[0, 1], default=0, help="정렬 방식 (0: 최신 기사 우선, 1: 오래된 기사 우선)")
-    parser.add_argument("-k", nargs="+", default=["반도체"], help="검색할 키워드 (여러 개 입력 가능, 기본값: '반도체')")
+    parser.add_argument("-k", nargs="+", default=["뉴스"], help="검색할 키워드 (여러 개 입력 가능, 기본값: '뉴스')")
 
     args = parser.parse_args()
     fetch_news(hours=args.t, search_terms=args.k, sort_order=args.s)
