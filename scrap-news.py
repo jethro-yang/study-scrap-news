@@ -2,6 +2,8 @@ import requests
 from bs4 import BeautifulSoup
 from datetime import datetime, timedelta
 import argparse
+from collections import Counter
+import re
 
 def fetch_news(hours=1, search_terms=["뉴스"], media_filters=None, sort_order=0, pages=10):
     """
@@ -16,6 +18,7 @@ def fetch_news(hours=1, search_terms=["뉴스"], media_filters=None, sort_order=
     headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36"}
     now = datetime.now()
     filtered_articles = []
+    article_texts = []
     
     print(f"'{ ' '.join(search_terms) }' 검색어로 뉴스 찾는 중...")
     
@@ -35,7 +38,6 @@ def fetch_news(hours=1, search_terms=["뉴스"], media_filters=None, sort_order=
             press_tag = article.select_one("div.NUnG9d span")
             press_name = press_tag.text.strip() if press_tag else "알 수 없음"
             
-            # 특정 언론사 필터링
             if media_filters and not any(m in press_name for m in media_filters):
                 continue
             
@@ -53,6 +55,7 @@ def fetch_news(hours=1, search_terms=["뉴스"], media_filters=None, sort_order=
             if article_time and now - article_time <= timedelta(hours=hours):
                 formatted_content = (article_time, f"[{press_name}] {title} ({time_text})\n    {link}\n")
                 filtered_articles.append(formatted_content)
+                article_texts.append(title)
     
     filtered_articles.sort(key=lambda x: x[0], reverse=(sort_order == 0))
     
@@ -62,6 +65,9 @@ def fetch_news(hours=1, search_terms=["뉴스"], media_filters=None, sort_order=
             file.writelines([f"{article[1]}\n" for article in filtered_articles])
         
         print(f"✅ 최근 {hours}시간 내 '{' '.join(search_terms)}' 관련 {len(filtered_articles)}개 뉴스가 'news_texts_filtered.txt' 파일에 저장되었습니다!")
+    
+    # 키워드 분석
+    analyze_keywords(article_texts)
 
 def parse_relative_time(time_text):
     """'2시간 전', '1일 전' 같은 상대 시간을 실제 datetime으로 변환"""
@@ -78,6 +84,19 @@ def parse_relative_time(time_text):
         return now - timedelta(days=days)
     
     return None
+
+def analyze_keywords(texts):
+    """뉴스 제목에서 주요 키워드 분석"""
+    words = []
+    for text in texts:
+        words.extend(re.findall(r'\b\w{2,}\b', text))  # 단어 추출 (2글자 이상)
+    
+    word_counts = Counter(words)
+    common_words = word_counts.most_common(10)  # 상위 10개 키워드
+    
+    print("\n📌 주요 키워드 분석:")
+    for word, count in common_words:
+        print(f"- {word}: {count}회")
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="맞춤형 뉴스 크롤링 스크립트")
