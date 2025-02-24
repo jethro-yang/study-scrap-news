@@ -81,13 +81,13 @@ def parse_relative_time(time_text):
     return None
 
 def analyze_keywords(texts):
-    """뉴스 제목에서 주요 키워드 분석 (3회 이상 등장하는 단어만 포함)"""
-    words = []
-    for text in texts:
-        words.extend(re.findall(r'\b\w{2,}\b', text))
+    """뉴스 제목에서 주요 키워드 분석 (3회 이상 등장하는 단어만 포함, 내림차순 정렬)"""
+    combined_text = ' '.join(texts)  # 전체 뉴스 제목을 하나의 텍스트로 결합
+    words = re.findall(r'\b\w{2,}\b', combined_text)  # 전체 텍스트에서 단어 추출
     
     word_counts = Counter(words)
-    common_words = [f"{word}->{count}" for word, count in word_counts.items() if count >= 3]
+    sorted_words = sorted(word_counts.items(), key=lambda x: x[1], reverse=True)  # 내림차순 정렬
+    common_words = [f"{word}->{count}" for word, count in sorted_words if count >= 3]
     
     print("\n📌 주요 키워드 분석:")
     for entry in common_words:
