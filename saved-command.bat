@@ -1,1 +1,1 @@
-python ./scrap-news.py -t 6 -k ¹ÝµµÃ¼
+python ./scrap-news.py -t 6 -k samsung
